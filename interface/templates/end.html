@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+  <title>Annotator 👾</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}">
+  <script>
+    window.onload = choosePic;
+    var myPix = new Array(
+      "https://media.giphy.com/media/DhstvI3zZ598Nb1rFf/giphy.gif",
+      "https://media.giphy.com/media/3og0Iy1SZz7B8rCa6A/giphy.gif",
+      "https://media.giphy.com/media/l0HUqsz2jdQYElRm0/giphy.gif",
+      "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+      "https://media.giphy.com/media/iuuwqzPEDAZqM/giphy.gif",
+      "https://media.giphy.com/media/3ohs7Xfl0tjxIfVth6/giphy.gif",
+      "https://media.giphy.com/media/1zJF5UQ62yQbMdAxj7/giphy.gif",
+      "https://media.giphy.com/media/5e3F0S8dVnV402TpYa/giphy.gif"
+    );
+    function choosePic() {
+      var randomNum = Math.floor(Math.random() * myPix.length);
+      document.getElementById("myPicture").src = myPix[randomNum];
+  </script>
+</head>
+<body>
+  <div class="side_navbar">
+    <div id="buttons_side_form">
+      <form action="/" method="post">
+        <button type="submit" type="button" name="submit_button" onClick="window.location.reload();" value="revert" class="button_side">↩️</button>
+        <button type="submit" type="button" name="submit_button" onClick="window.location.reload();" value="save" class="button_side">💾</button>
+      </form>
+    </div>
+  </div>
+  <div class="right_hand_panel">
+    <div class="text_area">
+      <p>End of the file reached. You may save your progression by clicking the save button. </p>
+      {% if end_of_file_message %}
+        <p>{{end_of_file_message}}</p>
+      {% else %}
+        <p>Nice try !</p>
+      {% endif %}
+    </div>
+    <img src="https://media.giphy.com/media/DhstvI3zZ598Nb1rFf/giphy.gif" alt="🦄" id="myPicture">
+  </div>
+</body>
+

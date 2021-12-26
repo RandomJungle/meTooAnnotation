@@ -1,0 +1,114 @@
+body {
+    background-color: #C7DFF1;
+}
+
+h1 {
+    color: DarkCyan;
+    text-align: center;
+    font-family: "Lato", Arial, sans-serif;
+}
+
+p {
+    font-family: "Nokora", Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.side_navbar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: CadetBlue;
+    overflow-x: hidden;
+}
+
+#buttons_side_form {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_side {
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    border-radius: 8px;
+    opacity: 0.8;
+    background-color: #C7DFF1;
+    border: none;
+}
+
+.button_side:hover {
+    opacity: 1;
+}
+
+#progress_bar {
+    margin-left: 20px;
+    color: #C7DFF1;
+}
+
+.right_hand_panel {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+
+.text_area {
+    overflow: auto;
+    margin-bottom: 150px;
+}
+
+.tweet_text {
+    font-family: "Lato", Arial, sans-serif;
+    font-size: 35px;
+    background-color: White;
+    padding: 30px; /* gives extra space around the text */
+    border-radius: 8px;
+}
+
+.choice_bar {
+    position: fixed;
+    top: 90%;
+    left: 55%;
+    transform: translate(-45%, -10%);
+}
+
+.choice_button {
+    height: 120px;
+    width: 120px;
+    font-size: 40px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+#accept_button {
+    border: 2px solid #44B641;
+}
+
+#reject_button {
+    border: 2px solid #FF593E;
+}
+
+#pass_button {
+    border: 2px solid #919191;
+}
+
+#accept_button:hover {
+    background-color: #44B641;
+}
+
+#reject_button:hover {
+    background-color: #FF593E;
+}
+
+#pass_button:hover {
+    background-color: #919191;
+}
+
+@media screen and (max-height: 450px) {
+  .side_navbar {padding-top: 15px;}
+  .side_navbar a {font-size: 18px;}
+}

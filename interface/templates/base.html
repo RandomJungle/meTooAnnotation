@@ -1,0 +1,83 @@
+<!doctype html>
+<head>
+  <title>Annotator 👾</title>
+  <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Lato|Urbanist|Fira+Sans|Quicksand|Archivo|Nokora">
+</head>
+<body>
+  <div class="side_navbar">
+    <div id="buttons_side_form">
+      <form action="/" method="post">
+        <button type="submit" type="button" name="submit_button" onClick="window.location.reload();" value="revert" class="button_side">↩️</button>
+        <button type="submit" type="button" name="submit_button" onClick="window.location.reload();" value="save" class="button_side">💾</button>
+      </form>
+    </div>
+    <div id="progress_bar">
+      {% if index_progress or index_progress == 0 and progress_bar %}
+        <p>Progress :<br>{{index_progress}} / {{progress_bar}}</p>
+      {% elif index_progress is not None %}
+        <p>{{index_progress}} texts annotated</p>
+      {% elif progress_bar %}
+        <p>{{progress_bar}} texts left to annotate</p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="right_hand_panel">
+    <div class="text_area">
+    {% if end_of_file_message %}
+      <p>{{end_of_file_message}}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
+    {% if tweet_id %}
+      <h1>Tweet id : {{tweet_id}}</h1>
+    {% else %}
+      <h1></h1>
+    {% endif %}
+    {% if tweet_text %}
+      <p id="japanese_text" class="tweet_text">{{tweet_text}}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
+    {% if tweet_english_text %}
+      <p id="english_text" class="tweet_text">{{tweet_english_text}}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
+    {% if label %}
+      <p id="label_text">The label for this tweet is : {{label}}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
+    </div>
+    <div class="choice_bar">
+      <form action="/" method="post">
+        <button type="submit"
+                name="submit_button"
+                class="choice_button"
+                id="accept_button"
+                onClick="window.location.reload();"
+                value="accept">
+          ✅
+        </button>
+        <button type="submit"
+                name="submit_button"
+                class="choice_button"
+                id="reject_button"
+                onClick="window.location.reload();"
+                value="reject">
+          ❌
+        </button>
+        <button type="submit"
+                name="submit_button"
+                class="choice_button"
+                id="pass_button"
+                onClick="window.location.reload();"
+                value="pass">
+          🤷
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+
