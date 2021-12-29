@@ -44,6 +44,11 @@
     {% else %}
       <p></p>
     {% endif %}
+    {% if tweet_french_text %}
+      <p id="french_text" class="tweet_text">{{tweet_french_text}}</p>
+    {% else %}
+      <p></p>
+    {% endif %}
     {% if label %}
       <p id="label_text">The label for this tweet is : {{label}}</p>
     {% else %}
